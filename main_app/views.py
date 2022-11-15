@@ -1,9 +1,5 @@
 from django.shortcuts import render
-
-parrots = [
-    {'name': 'Mojo', 'species': 'Blue Macaw', 'description': 'grumpy guy', 'age': 12},
-    {'name': 'Einstein', 'species': 'Grey', 'description': 'smart fellow', 'age': 15},
-]
+from .models import Parrot
 
 # Create your views here.
 def home(request):
@@ -13,6 +9,11 @@ def about(request):
     return render(request, 'about.html')
 
 def parrots_index(request):
+    parrots = Parrot.objects.all()
     return render(request, 'parrots/index.html', {
         'parrots': parrots
     })
+
+def parrots_detail(request, parrot_id):
+    parrot = Parrot.objects.get(id=parrot_id)
+    return render(request, 'parrots/detail.html', {'parrot' : parrot})
