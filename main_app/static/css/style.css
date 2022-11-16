@@ -2,7 +2,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    background-image: url("https://media.timeout.com/images/105906914/image.jpg");
+    background-image: url("https://static01.nyt.com/images/2022/05/17/science/17tb-tribirds/17tb-tribirds-mediumSquareAt3X.jpg");
   }
   
   main {
